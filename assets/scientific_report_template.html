@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --ink: #2E2A27;
+      --slate: #766D63;
+      --ochre: #A67C3D;
+      --paper: #F7F1E6;
+      --paper-alt: #FBF8F0;
+      --line: #D6CCBB;
+      --stone: #B8AB98;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.5;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 13mm 12mm 14mm;
+      background: var(--paper);
+    }
+    header {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--stone);
+      margin-bottom: 12px;
+    }
+    .kicker {
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.73rem;
+      margin-bottom: 5px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.68rem;
+      line-height: 1.1;
+      font-weight: 600;
+    }
+    .lede {
+      margin: 0;
+      max-width: 880px;
+      color: var(--slate);
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .stat {
+      padding-top: 6px;
+      border-top: 1px solid var(--line);
+    }
+    .stat-label {
+      font-size: 0.66rem;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+    .stat-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    section {
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .section-num {
+      color: var(--ochre);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    h2 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    p {
+      margin: 0 0 8px;
+      font-size: 0.84rem;
+    }
+    .callout {
+      margin: 8px 0 10px;
+      padding: 8px 10px;
+      border-left: 3px solid var(--ochre);
+      background: rgba(255, 255, 255, 0.3);
+      color: var(--slate);
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+    .figure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .figure-card {
+      padding: 8px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.3);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .figure-card img {
+      width: 100%;
+      display: block;
+      background: white;
+      border: 1px solid var(--line);
+    }
+    .caption {
+      margin-top: 5px;
+      color: var(--slate);
+      font-size: 0.78rem;
+      line-height: 1.3;
+    }
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.79rem;
+      margin-top: 8px;
+    }
+    .report-table th,
+    .report-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 6px 7px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .report-table thead th {
+      background: #ECE4D5;
+      border-bottom: 1px solid var(--stone);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">{{KICKER}}</div>
+      <h1>{{TITLE}}</h1>
+      <p class="lede">{{LEDE}}</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">{{STAT_1_LABEL}}</div><div class="stat-value">{{STAT_1_VALUE}}</div></div>
+        <div class="stat"><div class="stat-label">{{STAT_2_LABEL}}</div><div class="stat-value">{{STAT_2_VALUE}}</div></div>
+        <div class="stat"><div class="stat-label">{{STAT_3_LABEL}}</div><div class="stat-value">{{STAT_3_VALUE}}</div></div>
+        <div class="stat"><div class="stat-label">{{STAT_4_LABEL}}</div><div class="stat-value">{{STAT_4_VALUE}}</div></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-title"><div class="section-num">1. Section</div><h2>{{SECTION_1_TITLE}}</h2></div>
+      <p>{{SECTION_1_TEXT}}</p>
+      <div class="callout">{{SECTION_1_CALLOUT}}</div>
+    </section>
+
+    <section>
+      <div class="section-title"><div class="section-num">2. Section</div><h2>{{SECTION_2_TITLE}}</h2></div>
+      <p>{{SECTION_2_TEXT}}</p>
+      <div class="figure-grid">
+        <div class="figure-card">
+          <img src="{{FIGURE_1}}" alt="" />
+          <div class="caption">{{FIGURE_1_CAPTION}}</div>
+        </div>
+        <div class="figure-card">
+          <img src="{{FIGURE_2}}" alt="" />
+          <div class="caption">{{FIGURE_2_CAPTION}}</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><div class="section-num">3. Section</div><h2>{{SECTION_3_TITLE}}</h2></div>
+      <p>{{SECTION_3_TEXT}}</p>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>{{TABLE_COL_1}}</th>
+            <th>{{TABLE_COL_2}}</th>
+            <th>{{TABLE_COL_3}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{TABLE_ROW_1_COL_1}}</td>
+            <td>{{TABLE_ROW_1_COL_2}}</td>
+            <td>{{TABLE_ROW_1_COL_3}}</td>
+          </tr>
+          <tr>
+            <td>{{TABLE_ROW_2_COL_1}}</td>
+            <td>{{TABLE_ROW_2_COL_2}}</td>
+            <td>{{TABLE_ROW_2_COL_3}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

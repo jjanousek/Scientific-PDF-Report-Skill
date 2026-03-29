@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --ink: #2E2A27;
+      --slate: #766D63;
+      --paper: #F7F1E6;
+      --line: #D6CCBB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.45;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 13mm 12mm 14mm;
+      background: var(--paper);
+    }
+    .brand {
+      margin-bottom: 6px;
+    }
+    .brand img {
+      width: 20mm;
+      height: auto;
+      display: block;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 1.56rem;
+      font-weight: 600;
+    }
+    h2 {
+      margin: 14px 0 6px;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+    p {
+      margin: 0 0 8px;
+      font-size: 0.84rem;
+    }
+    ul {
+      margin: 4px 0 8px 18px;
+      padding: 0;
+    }
+    li {
+      margin: 0 0 5px;
+      font-size: 0.82rem;
+    }
+    .footer {
+      position: fixed;
+      right: 12mm;
+      bottom: 6mm;
+      color: var(--slate);
+      font-size: 0.72rem;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="brand">
+      <img src="{{LOGO}}" alt="" />
+    </div>
+    <h1>{{TITLE}}</h1>
+
+    <section>
+      <h2>{{SECTION_1_TITLE}}</h2>
+      <p>{{SECTION_1_TEXT}}</p>
+      <ul>
+        <li>{{SECTION_1_BULLET_1}}</li>
+        <li>{{SECTION_1_BULLET_2}}</li>
+        <li>{{SECTION_1_BULLET_3}}</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>{{SECTION_2_TITLE}}</h2>
+      <p>{{SECTION_2_TEXT_1}}</p>
+      <p>{{SECTION_2_TEXT_2}}</p>
+    </section>
+
+    <section>
+      <h2>{{SECTION_3_TITLE}}</h2>
+      <p>{{SECTION_3_TEXT_1}}</p>
+      <p>{{SECTION_3_TEXT_2}}</p>
+    </section>
+  </div>
+  <div class="footer">{{FOOTER_NAME}}</div>
+</body>
+</html>

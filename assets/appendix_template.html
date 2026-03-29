@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --ink: #2E2A27;
+      --slate: #766D63;
+      --ochre: #A67C3D;
+      --paper: #F7F1E6;
+      --line: #D6CCBB;
+      --stone: #B8AB98;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.45;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 13mm 12mm 14mm;
+      background: var(--paper);
+    }
+    header {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--stone);
+    }
+    .kicker {
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      margin-bottom: 4px;
+    }
+    h1 {
+      margin: 0 0 5px;
+      font-size: 1.48rem;
+      font-weight: 600;
+    }
+    .intro {
+      margin: 0;
+      color: var(--slate);
+      font-size: 0.86rem;
+    }
+    section {
+      margin-top: 12px;
+    }
+    h2 {
+      margin: 0 0 6px;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+    p {
+      margin: 0 0 8px;
+      font-size: 0.82rem;
+    }
+    .block {
+      margin-top: 8px;
+      padding: 8px 9px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.35);
+    }
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      margin-top: 8px;
+    }
+    .report-table th,
+    .report-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 6px 7px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .report-table thead th {
+      background: #ECE4D5;
+      border-bottom: 1px solid var(--stone);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="kicker">{{KICKER}}</div>
+      <h1>{{TITLE}}</h1>
+      <p class="intro">{{INTRO}}</p>
+    </header>
+
+    <section>
+      <h2>{{SECTION_1_TITLE}}</h2>
+      <p>{{SECTION_1_TEXT}}</p>
+      <div class="block">{{SECTION_1_NOTE}}</div>
+    </section>
+
+    <section>
+      <h2>{{SECTION_2_TITLE}}</h2>
+      <p>{{SECTION_2_TEXT}}</p>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>{{TABLE_COL_1}}</th>
+            <th>{{TABLE_COL_2}}</th>
+            <th>{{TABLE_COL_3}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{TABLE_ROW_1_COL_1}}</td>
+            <td>{{TABLE_ROW_1_COL_2}}</td>
+            <td>{{TABLE_ROW_1_COL_3}}</td>
+          </tr>
+          <tr>
+            <td>{{TABLE_ROW_2_COL_1}}</td>
+            <td>{{TABLE_ROW_2_COL_2}}</td>
+            <td>{{TABLE_ROW_2_COL_3}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

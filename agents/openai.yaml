@@ -1,0 +1,7 @@
+interface:
+  display_name: "Scientific PDF Report"
+  short_description: "Scientific-style PDF reports"
+  brand_color: "#A67C3D"
+
+policy:
+  allow_implicit_invocation: true
